@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'episode_list.css' %}">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'landing_page.css' %}">
+  <title>Bartender Rant Podcast</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+  {% load static %}
+  <script src="{% static 'main.js' %}" ></script>
+</head>
+<body>
+  <div id="navbar">
+    <span id='navbar_title'>
+      <a href='/'>
+      The Bartender Rant Podcast
+      </a>
+    </span>
+    <div id="nav_button">
+      <img id="nav_img" src="https://i.ibb.co/CW5Wvry/buttonpng.png" onclick="openNav()" />
+    </div>
+  </div>
+  <div id ="nav_panel">
+    <a class="nav_link" href="about_page">
+      ABOUT
+    </a>
+    <a class="nav_link" href="episode_list">
+      EPISODES
+    </a>
+  </div>
+  {% block content %}
+  {% endblock %}
+
+  {% load static %}
+  <script src="{% static 'spiral.js' %}" ></script>
+  <script>navScroll('1',1);</script>
+
+</body>
+</html>

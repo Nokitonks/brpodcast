@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+ {% block content %}
+
+ <script>
+
+ </script>
+
+
+ <div id="all_episodes">
+  {% for episode in episodes %}
+    <div class="episode_container" id="{{episode.number}}">
+      <div class="episode_character"
+           onclick="navScroll('{{episode.number}}',{{episode.number}})">
+        {{episode.number}} 
+      </div>
+      <div class="episode_desc">
+        {{episode.description}}
+      </div>
+    </div>
+  {% endfor %}
+ </div>
+{% endblock %}

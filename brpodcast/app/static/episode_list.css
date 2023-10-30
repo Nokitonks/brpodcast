@@ -1,0 +1,9 @@
+.episode_container{
+width: 100vw;
+min-height: 100vh;
+}
+#all_episodes{
+  overflow: scroll;
+  margin-top: 5rem;
+}
+

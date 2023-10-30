@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="about_page" onclick="openAbout()">
+
+  <style>
+  body{
+  overflow: hidden;
+  }
+  </style>
+  </div>
+  <div id='scroll_episode_nav'>
+      <div id="scroll_nav">
+        <ol id="nav_list" style="transform: translateY(0px);">
+          {% for episode in episodes %}
+            <li class="li_container" id="{{episode.number}}">
+              <div class="li_character"
+                   onclick="navScroll('{{episode.number}}',{{episode.number}})">
+                {{episode.number}} 
+              </div>
+              <div class="li_desc">
+                {{episode.description}}
+                <a class="li_button" href='{% url "episode_list" episode_id=2 %}'>
+                  GO
+                </a>
+              </div>
+            </li>
+          <div class="break"></div>
+          {% endfor %}
+        </ol>
+      </div>
+  </div>
+  <div id='container'>
+    <canvas class='canvas' id="sineCanvas"></canvas>
+    <canvas class='canvas' id="sineCanvas2"></canvas>
+  </div>
+
+
+{% endblock content %}
+
